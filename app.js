@@ -51,8 +51,6 @@ function onMouseMove(event){
     //만약 캔버스가 윈도우 전체사이즈일 경우, client x,y와 offset x,y는 같은 값일 것
     const x = event.offsetX;
     const y = event.offsetY;
-    const mx = event.pageX;
-    const my = event.pageY;
     //context는 path가 있다. 기본적인 라인을 의미함.
     //path를 움직일 수 있고, path를 색으로 칠할 수도 있음
     //path는 그냥 선이다.
@@ -60,10 +58,9 @@ function onMouseMove(event){
     if(!painting){
         ctx.beginPath();
         ctx.moveTo(x, y);
-        ctx.moveTo(mx,my);
+        
     } else{
         ctx.lineTo(x,y);
-        ctx.lineTo(mx,my);
         // 현재 sub-path의 마지막 점을 특정 좌표와 직선으로 연결한다.
         ctx.stroke();
         //이 lineTo와 stroke는 내가 클릭한 순간부터 끝날때까지 이어지는 선을 의미하는게 아니라
@@ -72,7 +69,18 @@ function onMouseMove(event){
         //시작점은 항상 처음 if안에 있는 x,y가 된다.
     }
 }
-
+function onTouchMove(event){
+    const mx = event.pageX;
+    const my = event.pageY;
+    if(!painting){
+        ctx.beginPath();
+        ctx.moveTo(mx,my);
+        
+    } else{
+        ctx.lineTo(mx,my);
+        ctx.stroke();
+    }
+}
 //우리가 해야하는 건 마우스를 캔버스에서 클릭하면, 그때부터 인지했으면 좋겠다
 
 function onMouseLeave(event){
@@ -130,7 +138,7 @@ if(canvas){
     canvas.addEventListener("mousemove", onMouseMove);
     //mousedown은 클릭하고 손을떼지 않을 때이다.
     canvas.addEventListener("mousedown", startPainting);
-    canvas.addEventListener("touchmove", onMouseMove);
+    canvas.addEventListener("touchmove", onTouchMove);
     canvas.addEventListener("touchstart", startPainting);
     canvas.addEventListener("mouseup",stopPainting);
     canvas.addEventListener("touchend",stopPainting);
