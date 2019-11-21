@@ -1,0 +1,71 @@
+<!DOCTYPE  html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>PaintJS</title>
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+    <body>
+        <canvas id = "jsCanvas" class="canvas">
+            <!-- id랑 클래스랑 차이 없다. 
+                 js는 id, css는 class를 사용하신대-->
+            <!-- canvas는 html 태그이다.
+                 웹페이지에서 그래픽을 그릴때 사용하는 컨테이너
+                 선분,사각형, 원 문자 이미지 추가하는 메서드 존재
+                 그래픽을 그리기위해 자바스크립트 사용해야함-->
+        </canvas>
+        <div class="controls">
+            <div class="controls__range">
+                <input type="range" id="jsRange" min="0.1" max="5.0" value="2.5" 
+                step="0.1"/>
+            </div>
+            <div class="controls__btns">
+                <button id="jsMode">FILL</button>
+                <button id="jsSave">SAVE</button>
+            </div>
+            <div class="controls__colors" id="jsColors">
+                <!-- 9개의 색상을 가져와야 한다. 
+                 백그라운드 색상을 각각 넣어야하는데 이건 다 다른거니깐
+                일일이 해야함. css보다 여기서 하는게 편하다.-->                       
+                <div 
+                    class="controls__color jsColor" 
+                    style="background-color: #2c2c2c">
+                </div>
+                <div 
+                    class="controls__color jsColor" 
+                    style="background-color: white">
+                </div>
+                <div 
+                    class="controls__color jsColor" 
+                    style="background-color: #FF3B30">
+                </div>
+                <div 
+                    class="controls__color jsColor" 
+                    style="background-color: #FF9500">
+                </div>
+                <div 
+                    class="controls__color jsColor" 
+                    style="background-color: #FFCC00">
+                </div >
+                <div 
+                    class="controls__color jsColor" 
+                    style="background-color: #4cd963">
+                </div>
+                <div 
+                    class="controls__color jsColor" 
+                    style="background-color: #5AC8FA">
+                </div>
+                <div 
+                    class="controls__color jsColor" 
+                    style="background-color: #0579FF">
+                </div>
+                <div 
+                    class="controls__color jsColor" 
+                    style="background-color: #5856D6">
+                </div>
+            </div>   
+        </div>
+        
+        <script src="app.js"></script>
+    </body>
+</html>
