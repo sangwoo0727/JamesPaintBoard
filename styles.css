@@ -11,15 +11,10 @@ body{
 /* 리셋 스타일(reset style) 또는 CSS 리셋(CSS reset)은 
    브라우저 마다 서로 다른 기본 스타일 차이를 없애기 위해서 
    브라우저의 기본 스타일을 날리는 것을 말한다. */
-.divClass{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.divClass .canvas{
-    width: 400px;
-    height: 400px;
+.canvas{
+    width: 700px;
+    height: 500px;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);

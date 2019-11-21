@@ -16,8 +16,8 @@ const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");//이건 , fill누르면 paint로, paint누르면 fill로 가게.
 const saveBtn = document.getElementById("jsSave");
 
-canvas.width = 400;
-canvas.height = 400;
+canvas.width = 700;
+canvas.height = 500;
 
 
 let painting = false;
@@ -25,7 +25,7 @@ let filling = false;
 const ctx = canvas.getContext("2d");
 
 ctx.fillStyle = "white";
-ctx.fillRect(0, 0, 500, 500);
+ctx.fillRect(0, 0, 700, 500);
 // 위의 두개는 기본 설정을 하지 않으면, 저장했을때 배경설정이 안되있어서 투명하게 나옴.
 ctx.strokeStyle = "#2c2c2c";
 ctx.lineWidth = 2.5;
@@ -112,7 +112,7 @@ function handleModeClick(){
 
 function handleCanvasClick(){
     if(filling) {
-        ctx.fillRect(0,0,500,500);
+        ctx.fillRect(0,0,700,500);
     }
 }
 
