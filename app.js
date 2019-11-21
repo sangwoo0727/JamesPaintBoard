@@ -126,7 +126,9 @@ if(canvas){
     canvas.addEventListener("mousemove", onMouseMove);
     //mousedown은 클릭하고 손을떼지 않을 때이다.
     canvas.addEventListener("mousedown", startPainting);
+    canvas.addEventListener("touchstart", startPainting);
     canvas.addEventListener("mouseup",stopPainting);
+    canvas.addEventListener("touchend",startPainting);
     canvas.addEventListener("mouseleave",onMouseLeave);
     canvas.addEventListener("click", handleCanvasClick);
     canvas.addEventListener("contextmenu", handleRightClick);
