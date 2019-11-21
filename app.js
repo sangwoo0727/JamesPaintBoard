@@ -132,7 +132,7 @@ if(canvas){
     canvas.addEventListener("touchend",stopPainting);
     canvas.addEventListener("mouseleave",onMouseLeave);
     canvas.addEventListener("click", handleCanvasClick);
-    //canvas.addEventListener("contextmenu", handleRightClick);
+    canvas.addEventListener("contextmenu", handleRightClick);
 }
 
 Array.from(colors).forEach(color => color.addEventListener("click", handleColorClick));
