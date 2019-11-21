@@ -16,8 +16,8 @@ const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");//이건 , fill누르면 paint로, paint누르면 fill로 가게.
 const saveBtn = document.getElementById("jsSave");
 
-canvas.width = 500;
-canvas.height = 500;
+canvas.width = 400;
+canvas.height = 400;
 
 
 let painting = false;
