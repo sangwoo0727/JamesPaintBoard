@@ -135,6 +135,9 @@ function handleSaveClick(event){
 }
 
 if(canvas){
+    //touch로 스마트폰에서도 사용할 수 있게 하였는데,
+    //touch를 한 상태로 그림을 그리면 전체 스크롤바 때문에 제대로 기능구현이 안된다..
+    //해결책을 생각해봐야함
     canvas.addEventListener("mousemove", onMouseMove);
     //mousedown은 클릭하고 손을떼지 않을 때이다.
     canvas.addEventListener("mousedown", startPainting);
